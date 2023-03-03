@@ -71,7 +71,6 @@ const engineerQuestions = [
     message: 'Please enter the GitHub username of the engineer:',
   },
 ];
-const engineerAnswers = [];
 
 const internQuestions = [
   {
@@ -96,8 +95,6 @@ const internQuestions = [
   },
 ];
 
-const internAnswers = [];
-
 function init() {
   inquirer.prompt(managerQuestions).then((data) => {
     let manager = new Manager(
@@ -118,7 +115,7 @@ function questionLoop() {
         path.join(__dirname, '/dist/', 'team.html'),
         generateHTML(team)
       );
-      // console.log(team);
+      console.log(team);
     } else {
       nextQuestion();
     }

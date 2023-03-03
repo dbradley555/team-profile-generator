@@ -3,17 +3,83 @@ function insertCards(team) {
   html.push(
     team
       .filter((emp) => emp.getRole() === 'Manager')
-      .map((manager) => console.log(manager))
+      .map((manager) => {
+        return `<div class="col">
+      <div class="card shadow p-3 mb-5 bg-body-tertiary rounded">
+        <div class="card-header">
+          <h2 id="manager-name">${manager.name}</h2>
+          <h5 id="manager-role">
+            <i class="fa-solid fa-people-roof"></i> Manager
+          </h5>
+        </div>
+        <div class="card-body">
+          <ul class="list-group">
+            <li class="list-group-item" id="manager-id">Employee ID: ${manager.id}</li>
+            <li class="list-group-item" id="manager-email">Email: 
+            ${manager.email}
+            </li>
+            <li class="list-group-item" id="manager-office">Office Number: 
+            ${manager.officeNumber}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>`;
+      })
   );
   html.push(
     team
       .filter((emp) => emp.getRole() === 'Engineer')
-      .map((engineer) => console.log(engineer))
+      .map((engineer) => {
+        return `<div class="col">
+      <div class="card shadow p-3 mb-5 bg-body-tertiary rounded">
+        <div class="card-header">
+          <h2 id="engineer-name">${engineer.name}</h2>
+          <h5 id="engineer-role">
+          <i class="fa-solid fa-glasses"></i> Engineer
+          </h5>
+        </div>
+        <div class="card-body">
+          <ul class="list-group">
+            <li class="list-group-item" id="engineer-id">Employee ID: ${engineer.id}</li>
+            <li class="list-group-item" id="engineer-email">Email: 
+            ${engineer.email}
+            </li>
+            <li class="list-group-item" id="engineer-github">GitHub Username: 
+            ${engineer.github}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>`;
+      })
   );
   html.push(
     team
       .filter((emp) => emp.getRole() === 'Intern')
-      .map((intern) => console.log(intern))
+      .map((intern) => {
+        return `<div class="col">
+      <div class="card shadow p-3 mb-5 bg-body-tertiary rounded">
+        <div class="card-header">
+          <h2 id="intern-name">${intern.name}</h2>
+          <h5 id="intern-role">
+          <i class="fa-sharp fa-solid fa-user-graduate"></i> Intern
+          </h5>
+        </div>
+        <div class="card-body">
+          <ul class="list-group">
+            <li class="list-group-item" id="intern-id">Employee ID: ${intern.id}</li>
+            <li class="list-group-item" id="intern-email">Email: 
+            ${intern.email}
+            </li>
+            <li class="list-group-item" id="intern-school">University Attended: 
+            ${intern.school}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>`;
+      })
   );
   return html.join('');
 }
@@ -39,7 +105,7 @@ function generateHTML(team) {
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../src/style.css" />
 
     <title>Team Profile</title>
   </head>
