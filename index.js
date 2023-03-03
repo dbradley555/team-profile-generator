@@ -115,7 +115,6 @@ function questionLoop() {
         path.join(__dirname, '/dist/', 'team.html'),
         generateHTML(team)
       );
-      console.log(team);
     } else {
       nextQuestion();
     }
